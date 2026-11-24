@@ -81,7 +81,7 @@ def get_prefix(bot, message):
     return default_prefix
 
 # --- 🤖 BOT CLASS ---
-class Starla(commands.Bot):
+class ALISHA(commands.Bot):
     def __init__(self):
         intents = discord.Intents.all()
         intents.dm_messages = True
@@ -191,7 +191,7 @@ class Starla(commands.Bot):
             mor = self.emojis_dict["mor"]
             
             if "harsh" in content:
-                await message.reply(f"{crown} **Harsh** is the authorized software architect and core platform systems developer for Starla.")
+                await message.reply(f"{crown} **Harsh** is the authorized software architect and core platform systems developer for Alisha.")
                 return
             elif any(word in content for word in ["owner", "creator", "maker"]):
                 await message.reply(f"{admin} This enterprise system infrastructure is strictly managed, deployed, and owned by **Harsh**.")
@@ -199,7 +199,7 @@ class Starla(commands.Bot):
             elif content == "":
                 prefix_data = self.command_prefix(self, message)
                 current_prefix = prefix_data[0] if isinstance(prefix_data, list) else prefix_data
-                await message.reply(f"{v} Greetings. I am **Starla**, optimized by **Harsh**. Your configuration prefix is `{current_prefix}`. Use `{current_prefix}help` to access service modules. {heart} {mor}")
+                await message.reply(f"{v} Greetings. I am **Alisha**, optimized by **Harsh**. Your configuration prefix is `{current_prefix}`. Use `{current_prefix}help` to access service modules. {heart} {mor}")
                 return
 
         await self.process_commands(message)
@@ -209,7 +209,7 @@ class CoreCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # --- 🏓 UPGRADED HYBRID PING COMMAND (Starla Theme) ---
+    # --- 🏓 UPGRADED HYBRID PING COMMAND (Alisha Theme) ---
     @commands.hybrid_command(name="ping", description="Checks the application system responsiveness metrics.")
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     @app_commands.allowed_installs(guilds=True, users=True)
@@ -417,7 +417,7 @@ class PremiumSystem(commands.Cog):
             await ctx.send(f"{f_red} **Access Restriction Fault:** The requested action requires elevation privileges matching the system root developer.")
 
 if __name__ == "__main__":
-    bot = Starla()
+    bot = Alisha()
     token = os.getenv("TOKEN")
     if token:
         bot.run(token)
